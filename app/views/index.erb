@@ -1,0 +1,10 @@
+<h1>Here are ALL of the Robots!</h1>
+<% @robots.each do |robot| %>
+  <a href="/robots/<%= robot.id %>"><%= robot.name %></a>
+  <%= robot.city %>
+  <%= robot.state %>
+  <%= robot.birthdate %>
+  <%= robot.department %>
+  <%= robot.date_hired %>
+  <br/>
+<% end %>
