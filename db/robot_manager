@@ -1,7 +1,7 @@
 ---
 robots:
 - id: 1
-  name: Brant
+  name: Brenda
   city: Denver
   state: CO
   birthdate: 02-17-72
@@ -14,4 +14,46 @@ robots:
   birthdate: 04-17-72
   date_hired: 04-18-72
   department: Education
-total: 2
+- id: 3
+  name: Penny
+  city: Denver
+  state: CO
+  birthdate: 040180
+  date_hired: 040280
+  department: Education
+- id: 4
+  name: Daniel
+  city: San Diego
+  state: Ca
+  birthdate: '2015-12-09'
+  date_hired: '2015-12-10'
+  department: transformation
+- id: 5
+  name: Harry
+  city: San Diego
+  state: Ca
+  birthdate: '2015-12-09'
+  date_hired: '2015-12-10'
+  department: education
+- id: 6
+  name: Bill
+  city: Salt Lake
+  state: Utah
+  birthdate: '2015-02-18'
+  date_hired: '2015-01-01'
+  department: Sanitation
+- id: 7
+  name: Greg
+  city: Denver
+  state: ''
+  birthdate: '2015-12-14'
+  date_hired: '2015-04-05'
+  department: Transformation
+- id: 8
+  name: toni
+  city: Denver
+  state: AR
+  birthdate: '2015-01-31'
+  date_hired: '2016-01-01'
+  department: Education
+total: 8
