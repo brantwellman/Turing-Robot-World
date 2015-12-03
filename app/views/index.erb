@@ -8,4 +8,9 @@
   <%= robot.date_hired %>
   <img src="https://robohash.org/<%= robot.name %>.png">
   <br/>
+  <a href="/robots/<%= robot.id %>/edit" class="waves-effect waves-light btn">Modify Robot</a>
+  <form class="col s6" action="/robots/<%= robot.id %>" method="post">
+    <input type="hidden" name="_method" value="delete">
+    <input class="waves-effect waves-light btn" type="submit" value="Destroy Robot">
+  </form>
 <% end %>

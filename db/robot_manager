@@ -7,13 +7,6 @@ robots:
   birthdate: 02-17-72
   date_hired: 02-18-72
   department: Sanitation
-- id: 2
-  name: George
-  city: Seattle
-  state: WA
-  birthdate: 04-17-72
-  date_hired: 04-18-72
-  department: Education
 - id: 3
   name: Penny
   city: Denver
