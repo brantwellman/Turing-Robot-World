@@ -2,11 +2,25 @@
 <html lang="en">
 <head>
   <title>The Robot Manager</title>
+  <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link type="text/css" rel="stylesheet" href="/css/materialize.min.css"  media="screen,projection"/>
+  <link rel="stylesheet" href="/css/application.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 </head>
 <body>
+  <nav>
+    <div class="nav-wrapper green darken-4">
+      <a href="/" class="brand-logo">The Robot Manager</a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a href = "/robots">All Robots</a></li>
+        <li><a href = "/robots/new">Create a Robot</a></li>
+      </ul>
+    </div>
+  </nav>
   <div class="container">
     <%= yield %>
   </div>
-
+  <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script type="text/javascript" src="/js/materialize.min.js"></script>
 </body>
 </html>

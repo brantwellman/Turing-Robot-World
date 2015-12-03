@@ -1,9 +1,26 @@
-<h1>Here's one of the Robot Stars!</h1>
-<%= @robot.name %>
-<%= @robot.department %>
-<img src="https://robohash.org/<%= @robot.name %>.png">
-<a href="/robots/<%= @robot.id %>/edit" class="waves-effect waves-light btn">Modify Robot</a>
-<form class="col s6" action="/robots/<%= @robot.id %>" method="post">
-  <input type="hidden" name="_method" value="delete">
-  <input class="waves-effect waves-light btn" type="submit" value="Destroy Robot">
-</form>
+<div class="container header">
+  <h1>Here's one of the Robot Stars!</h1>
+</div>
+<div class="container">
+  <div class="col s12 m6">
+    <div class="card blue-grey darken-1">
+      <div class="card-content white-text">
+        <span class="card-title">Robot <%=@robot.name%></span>
+        <%= @robot.department %>
+        <%= @robot.birthdate %>
+        <%= @robot.date_hired %>
+        <%= @robot.department %>
+        <%= @robot.city %>
+        <%= @robot.state %>
+        <img src="https://robohash.org/<%= @robot.name %>.png">
+      </div>
+      <div class="card-action">
+        <a href="/robots/<%= @robot.id %>/edit" class="waves-effect waves-light btn">Modify Robot</a>
+        <form class="col s6" action="/robots/<%= @robot.id %>" method="post">
+          <input type="hidden" name="_method" value="delete">
+          <input class="waves-effect waves-light btn" type="submit" value="Destroy Robot">
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

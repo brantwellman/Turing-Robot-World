@@ -1,8 +1,4 @@
-require 'models/robot_manager'
-
 class RobotManagerApp < Sinatra::Base
-  set :root, File.expand_path("..", __dir__)
-  set :method_override, true
 
   get '/' do
     erb :dashboard
@@ -31,16 +27,19 @@ class RobotManagerApp < Sinatra::Base
     erb :show
   end
 
+  # update
   get '/robots/:id/edit' do |id|
     @robot = RobotManager.find(id.to_i)
     erb :edit
   end
 
+  # update
   put '/robots/:id' do |id|
     RobotManager.update(id.to_i, params[:robot])
     redirect "/robots/#{id}"
   end
 
+  # delete
   delete '/robots/:id' do |id|
     RobotManager.delete(id.to_i)
     redirect '/robots'

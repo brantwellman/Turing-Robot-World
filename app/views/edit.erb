@@ -1,12 +1,23 @@
-
-<h5>Change Your Robot:</h5>
+<div class="container header">
+  <h5>Change Your Robot:</h5>
+</div>
 <br/>
 <form action = "/robots/<%= @robot.id %>" method="post">
   <input type="hidden" name = "_method" value="put">
-  <input type='text' name='robot[name]' value="<%= @robot.name %>" id="robot_name"/><label for="robot_name">Robot Name</label><br/>
-  <input type='text' name='robot[city]' id="robot_city"/><label for="robot_city">City of Residence</label><br/>
-  <div>
-    <select name='robot[state]' id="robot_state">
+  <div class="row">
+    <div class="input-field">
+      <input type='text' name='robot[name]' value="<%= @robot.name %>" id="robot_name"/><label for="robot_name">Robot Name</label><br/>
+    </div>
+  </div>
+  <div class="row">
+    <div class="input-field">
+      <!-- <input type="hidden" name = "_method" value="put"> -->
+      <input type='text' name='robot[city]' value="<%= @robot.city %>" id="robot_city"/><label for="robot_city">City of Residence</label><br/>
+    </div>
+  </div>
+
+  <div class = "row">
+    <select name='robot[state]' value="<%= @robot.state%>" id="robot_state">
     	<option value="AL">Alabama</option>
     	<option value="AK">Alaska</option>
     	<option value="AZ">Arizona</option>
@@ -58,12 +69,15 @@
     	<option value="WV">West Virginia</option>
     	<option value="WI">Wisconsin</option>
     	<option value="WY">Wyoming</option>
-    </select>State of Residence
-  </div><br/>
-  <input type='date' name='robot[birthdate]' id="robot_birthdate"/><label for="robot_birthdate">Date of Birth</label><br/>
-  <input type='date' name='robot[date_hired]' id="robot_date_hired"/><label for="robot_date_hired">Date of Hire</label><br/>
-  <input type='radio' value='Sanitation' name='robot[department]' id="robot_department"/><label for="robot_department">Sanitation</label><br/>
-  <input type='radio' value='Education' name='robot[department]' id="robot_department"/><label for="robot_department">Education</label><br/>
-  <input type='radio' value='Transformation' name='robot[department]' id="robot_department"/><label for="robot_department">Transformation</label><br/>
+    </select>
+    State of Residence
+  <!-- </div> -->
+  <br/>
+  <br/>
+  <input type='date' name='robot[birthdate]' value="<%= @robot.birthdate %>" id="robot_birthdate"/><label for="robot_birthdate">Date of Birth</label><br/>
+  <input type='date' name='robot[date_hired]' value="<%= @robot.date_hired %>" id="robot_date_hired"/><label for="robot_date_hired">Date of Hire</label><br/>
+  <input type='radio' value='Sanitation'<%= @robot.department.include?("Sanitation")? checked="checked": "" %> name='robot[department]' id="robot_department"/><label for="robot_department">Sanitation</label><br/>
+  <input type='radio' value='Education'<%= @robot.department.include?("Education")? checked="checked": "" name='robot[department]' id="robot_department"/><label for="robot_department">Education</label><br/>
+  <input type='radio' value='Transformation'<%= @robot.department.include?("Transformation")? checked="checked": "" name='robot[department]' id="robot_department"/><label for="robot_department">Transformation</label><br/>
   <button type="submit" name="action">Submit</button>
 </form>
