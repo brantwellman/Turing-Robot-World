@@ -11,7 +11,6 @@
   </div>
   <div class="row">
     <div class="input-field">
-      <!-- <input type="hidden" name = "_method" value="put"> -->
       <input type='text' name='robot[city]' value="<%= @robot.city %>" id="robot_city"/><label for="robot_city">City of Residence</label><br/>
     </div>
   </div>
@@ -71,13 +70,21 @@
     	<option value="WY">Wyoming</option>
     </select>
     State of Residence
-  <!-- </div> -->
   <br/>
   <br/>
   <input type='date' name='robot[birthdate]' value="<%= @robot.birthdate %>" id="robot_birthdate"/><label for="robot_birthdate">Date of Birth</label><br/>
   <input type='date' name='robot[date_hired]' value="<%= @robot.date_hired %>" id="robot_date_hired"/><label for="robot_date_hired">Date of Hire</label><br/>
-  <input type='radio' value='Sanitation'<%= @robot.department.include?("Sanitation")? checked="checked": "" %> name='robot[department]' id="robot_department"/><label for="robot_department">Sanitation</label><br/>
-  <input type='radio' value='Education'<%= @robot.department.include?("Education")? checked="checked": "" name='robot[department]' id="robot_department"/><label for="robot_department">Education</label><br/>
-  <input type='radio' value='Transformation'<%= @robot.department.include?("Transformation")? checked="checked": "" name='robot[department]' id="robot_department"/><label for="robot_department">Transformation</label><br/>
-  <button type="submit" name="action">Submit</button>
+
+  <div class="input-field">
+    <select name='robot[department]' id="robot_department">
+      <option value="" disabled selected>Choose a Department</option>
+      <option value='Education'>Education</option>
+      <option value='Sanitation'>Sanitation</option>
+      <option value='Transformation'>Transformation</option>
+    </select>
+  </div>
+  <button class="btn blue waves-effect waves-teal" type="submit" value = "submit" name="action">Submit
+    <i class="material-icons right">send</i>
+  </button>
+  <!-- <button type="submit" name="action">Submit</button> -->
 </form>
