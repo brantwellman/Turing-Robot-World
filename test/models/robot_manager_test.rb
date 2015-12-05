@@ -24,63 +24,63 @@ class RobotManagerTest < Minitest::Test
     assert_equal "a state1", robot.state
     assert_equal 1, robot.id
   end
-
-  def test_it_can_find_all_robots
-    create_robots(3)
-
-    robots = RobotManager.all
-    robot1 = robots[0]
-    robot2 = robots[1]
-    robot3 = robots[2]
-
-    assert_equal 3, robots.count
-    assert_equal "a name1", robot1.name
-    assert_equal "a name2", robot2.name
-    assert_equal "a name3", robot3.name
-  end
-
-  def test_it_finds_an_existing_robot
-    create_robots(3)
-
-    robot1 = RobotManager.find(1)
-    robot2 = RobotManager.find(2)
-
-    assert_equal "a name1", robot1.name
-    assert_equal "a name2", robot2.name
-  end
-
-  def test_it_updates_an_existing_robot_and_doesnt_modify_others
-    create_robots(2)
-
-    RobotManager.update(1, {  :name => "name",
-                              :city => "city",
-                              :state => "state",
-                              :birthdate => "birthdate",
-                              :date_hired => "a date_hired",
-                              :department => "a department"
-                              })
-
-    robot1 = RobotManager.find(1)
-    robot2 = RobotManager.find(2)
-
-    assert_equal "name", robot1.name
-    assert_equal "a name2", robot2.name
-  end
-
-  def test_it_destroys_an_existing_robot_wo_destroying_other_robots
-    create_robots(3)
-
-    robots1 = RobotManager.all
-    RobotManager.delete(1)
-    robots2 = RobotManager.all
-    robot2 = RobotManager.find(2)
-    robot3 = RobotManager.find(3)
-
-    assert_equal 3, robots1.count
-    assert_equal 2, robots2.count
-    assert_equal "a name2", robot2.name
-    assert_equal "a name3", robot3.name
-    assert robots2.none? { |robot| robot.name == "a name1" }
-  end
+  # 
+  # def test_it_can_find_all_robots
+  #   create_robots(3)
+  #
+  #   robots = RobotManager.all
+  #   robot1 = robots[0]
+  #   robot2 = robots[1]
+  #   robot3 = robots[2]
+  #
+  #   assert_equal 3, robots.count
+  #   assert_equal "a name1", robot1.name
+  #   assert_equal "a name2", robot2.name
+  #   assert_equal "a name3", robot3.name
+  # end
+  #
+  # def test_it_finds_an_existing_robot
+  #   create_robots(3)
+  #
+  #   robot1 = RobotManager.find(1)
+  #   robot2 = RobotManager.find(2)
+  #
+  #   assert_equal "a name1", robot1.name
+  #   assert_equal "a name2", robot2.name
+  # end
+  #
+  # def test_it_updates_an_existing_robot_and_doesnt_modify_others
+  #   create_robots(2)
+  #
+  #   RobotManager.update(1, {  :name => "name",
+  #                             :city => "city",
+  #                             :state => "state",
+  #                             :birthdate => "birthdate",
+  #                             :date_hired => "a date_hired",
+  #                             :department => "a department"
+  #                             })
+  #
+  #   robot1 = RobotManager.find(1)
+  #   robot2 = RobotManager.find(2)
+  #
+  #   assert_equal "name", robot1.name
+  #   assert_equal "a name2", robot2.name
+  # end
+  #
+  # def test_it_destroys_an_existing_robot_wo_destroying_other_robots
+  #   create_robots(3)
+  #
+  #   robots1 = RobotManager.all
+  #   RobotManager.delete(1)
+  #   robots2 = RobotManager.all
+  #   robot2 = RobotManager.find(2)
+  #   robot3 = RobotManager.find(3)
+  #
+  #   assert_equal 3, robots1.count
+  #   assert_equal 2, robots2.count
+  #   assert_equal "a name2", robot2.name
+  #   assert_equal "a name3", robot3.name
+  #   assert robots2.none? { |robot| robot.name == "a name1" }
+  # end
 
 end
