@@ -1,12 +1,5 @@
 ---
 robots:
-- id: 1
-  name: Brenda
-  city: Denver
-  state: CO
-  birthdate: 02-17-72
-  date_hired: 02-18-72
-  department: Sanitation
 - id: 3
   name: Pennyyy
   city: Denverrrr
