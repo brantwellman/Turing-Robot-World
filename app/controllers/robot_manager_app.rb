@@ -18,6 +18,9 @@ class RobotManagerApp < Sinatra::Base
   # create
   post '/robots' do
     RobotManager.create(params[:robot])
+    Pony.mail  :to => "brantwellman@gmail.com",
+              :from => "brantwellman@gmail.com",
+              :subject => "A new Robot has been created!"
     redirect '/robots'
   end
 
